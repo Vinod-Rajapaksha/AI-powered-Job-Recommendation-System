@@ -1,12 +1,17 @@
-# 💼 AI-Powered Job Recommendation System
+# 🤖 AI-Powered Job Recommendation System
 
 ![Angular](https://img.shields.io/badge/Frontend-Angular-red)
-![Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot-blue)
-![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-green)
-![TailwindCSS](https://img.shields.io/badge/UI-TailwindCSS-9cf)
+![Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot-brightgreen)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blueviolet)
+![TailwindCSS](https://img.shields.io/badge/UI-TailwindCSS-blue)
+![OpenAI](https://img.shields.io/badge/AI-OpenAI-ff69b4)
 ![Status](https://img.shields.io/badge/Status-In_Progress-important)
 
 > 🤖 A smart AI-powered job recommendation system that analyzes candidate resumes and matches them with the best job listings using TF-IDF, Cosine Similarity, and OpenAI's Embedding Models.
+
+---
+
+📽️ **[Click to watch the Demo](https://www.linkedin.com/in/vinod-rajapaksha/)**
 
 ---
 
@@ -17,7 +22,7 @@
 - 🔍 Search & filter job postings
 - 📈 Analytics dashboard
 - 📑 Downloadable job recommendations
-- 🔐 Admin authentication (JWT/session)
+- 🔐 User authentication (JWT/session)
 - 🌙 Light/Dark mode toggle
 - 📦 RESTful APIs for frontend-backend communication
 
@@ -25,11 +30,11 @@
 
 ## 🧰 Tech Stack
 
-| Frontend          | Backend            | Database        | AI/Logic Layer         | Tools              |
+| Frontend          | Backend            | Database         | AI/ML                   | Tools/Utils        |
 |-------------------|--------------------|------------------|-------------------------|--------------------|
-| Angular           | Spring Boot        | PostgreSQL       | OpenAI Embeddings       | IntelliJ IDEA      |
-| Angular Material  | Spring Web, JPA    | H2 (dev mode)    | TF-IDF + Cosine Matching| Postman / Swagger  |
-| Tailwind CSS      | Spring Security    |                  | Python (optional AI)    | Git & GitHub       |
+| Angular           | Spring Boot        | PostgreSQL       | OpenAI Embeddings       | IntelliJ IDEA / VS Code |
+| Angular Material  | Spring Web (REST)  | H2 (dev mode)    | TF-IDF + Cosine Matching| Postman / Swagger  |
+| Tailwind CSS      | Spring Security    | JPA/Hibernate    | Python                  | Git & GitHub       |
 
 ---
 
@@ -119,9 +124,9 @@ Visit: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-## 🔐 Authentication (Future)
+## 🔐 Authentication
 
-- Admin login with JWT
+- User login with JWT
 - Role-based access
 
 ---
@@ -129,7 +134,7 @@ Visit: [http://localhost:4200](http://localhost:4200)
 ## 🧪 Testing Tools
 
 - ✅ Postman / Swagger UI – Test API routes
-- ✅ MongoDB Compass / PgAdmin – View data
+- ✅ PgAdmin – View data
 - ✅ Angular DevTools / Browser DevTools – Debug frontend
 
 ---
@@ -155,17 +160,17 @@ Visit: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-## 📄 License
+## 👨‍💻 Author
 
-This project is licensed under the [MIT License](LICENSE).
+👨‍💻 **Vinod Rajapaksha**
+📧 vinodrajapaksha.dev@gmail.com  
+🌐 [LinkedIn](https://www.linkedin.com/in/vinod-rajapaksha) | [GitHub](https://github.com/Vinod-Rajapaksha)
 
 ---
 
-## 👨‍💻 Author
+## 📄 License
 
-**Vinod Maduranga**  
-📧 vinodrajapaksha.dev@gmail.com  
-🌐 [LinkedIn](https://www.linkedin.com/in/vinod-rajapaksha) | [GitHub](https://github.com/Vinod-Rajapaksha)
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
