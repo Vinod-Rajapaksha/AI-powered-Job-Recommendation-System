@@ -1,6 +1,7 @@
 package com.jobrecommendation.controller;
 
 import com.jobrecommendation.dto.LoginDto;
+import com.jobrecommendation.dto.RegisterDto;
 import com.jobrecommendation.model.User;
 import com.jobrecommendation.service.UserService;
 import com.jobrecommendation.util.JwtUtil;
@@ -26,4 +27,10 @@ public class AuthController {
         User user = userService.findByUsername(loginDto.getUsername());
         return jwtUtil.generateToken(user.getUsername());
     }
+
+    @PostMapping("/register")
+    public User register(@RequestBody RegisterDto registerDto) {
+        return userService.registerUser(registerDto.getUsername(), registerDto.getPassword());
+    }
+
 }
