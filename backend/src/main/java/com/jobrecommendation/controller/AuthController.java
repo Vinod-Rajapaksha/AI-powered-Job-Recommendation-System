@@ -1,36 +1,37 @@
 package com.jobrecommendation.controller;
 
-import com.jobrecommendation.dto.LoginDto;
-import com.jobrecommendation.dto.RegisterDto;
-import com.jobrecommendation.model.User;
-import com.jobrecommendation.service.UserService;
-import com.jobrecommendation.util.JwtUtil;
-import lombok.RequiredArgsConstructor;
+import com.jobrecommendation.model.AuthRequest;
+import com.jobrecommendation.service.JwtService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@RequiredArgsConstructor
 public class AuthController {
 
-    private final AuthenticationManager authenticationManager;
-    private final UserService userService;
-    private final JwtUtil jwtUtil;
+    @Autowired
+    private AuthenticationManager authManager;
+
+    @Autowired
+    private JwtService jwtService;
 
     @PostMapping("/login")
-    public String login(@RequestBody LoginDto loginDto) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword())
-        );
-        User user = userService.findByUsername(loginDto.getUsername());
-        return jwtUtil.generateToken(user.getUsername());
+    public ResponseEntity<?> login(@RequestBody AuthRequest request) {
+        try {
+            Authentication authentication = authManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
+            );
+            String token = jwtService.generateToken(authentication.getPrincipal());
+            return ResponseEntity.ok(Map.of("token", token));
+        } catch (AuthenticationException e) {
+            return ResponseEntity.status(401).body("Invalid credentials");
+        }
     }
-
-    @PostMapping("/register")
-    public User register(@RequestBody RegisterDto registerDto) {
-        return userService.registerUser(registerDto.getUsername(), registerDto.getPassword());
-    }
-
 }

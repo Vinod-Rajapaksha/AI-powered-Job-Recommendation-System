@@ -2,31 +2,29 @@ package com.jobrecommendation.service;
 
 import com.jobrecommendation.model.User;
 import com.jobrecommendation.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+
 @Service
-@RequiredArgsConstructor
-public class UserService {
-    private final UserRepository userRepository;
-    private PasswordEncoder passwordEncoder;
+public class UserService implements UserDetailsService {
 
     @Autowired
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
-    }
+    private UserRepository userRepository;
 
-    public User registerUser(String username, String password) {
-        User user = User.builder()
-                .username(username)
-                .password(passwordEncoder.encode(password))
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+
+        return org.springframework.security.core.userdetails.User
+                .withUsername(user.getUsername())
+                .password(user.getPassword())
+                .authorities(Collections.emptyList())
                 .build();
-        return userRepository.save(user);
-    }
-
-    public User findByUsername(String username) {
-        return userRepository.findByUsername(username).orElse(null);
     }
 }
