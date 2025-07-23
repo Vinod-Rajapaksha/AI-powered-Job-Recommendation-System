@@ -22,7 +22,7 @@
 - 🔍 Search & filter job postings
 - 📈 Analytics dashboard
 - 📑 Downloadable job recommendations
-- 🔐 User authentication (JWT/session)
+- 🔐 User authentication (JWT)
 - 🌙 Light/Dark mode toggle
 - 📦 RESTful APIs for frontend-backend communication
 
@@ -32,8 +32,8 @@
 
 | Frontend          | Backend            | Database         | AI/ML                   | Tools/Utils        |
 |-------------------|--------------------|------------------|-------------------------|--------------------|
-| Angular           | Spring Boot        | PostgreSQL       | OpenAI Embeddings       | IntelliJ IDEA / VS Code |
-| Angular Material  | Spring Web (REST)  | H2 (dev mode)    | TF-IDF + Cosine Matching| Postman / Swagger  |
+| Angular           | Spring Boot        | PostgreSQL       | OpenAI Embeddings       | IntelliJ IDEA & VS Code |
+| Angular Material  | Spring Web (REST)  | H2 (dev mode)    | TF-IDF + Cosine Matching| Postman  |
 | Tailwind CSS      | Spring Security    | JPA/Hibernate    | Python                  | Git & GitHub       |
 
 ---
@@ -133,20 +133,20 @@ Visit: [http://localhost:4200](http://localhost:4200)
 
 ## 🧪 Testing Tools
 
-- ✅ Postman / Swagger UI – Test API routes
+- ✅ Postman – Test API routes
 - ✅ PgAdmin – View data
-- ✅ Angular DevTools / Browser DevTools – Debug frontend
+- ✅ Angular DevTools & Browser DevTools – Debug frontend
 
 ---
 
-## 🧠 AI Logic (Bonus)
+## 🧠 AI Logic
 
 - Extract keywords from resumes using PDFBox
 - Match with job listings using:
   - TF-IDF keyword comparison
   - Cosine Similarity
   - OpenAI Embedding API (for smarter vector-based matching)
-- Optional Python ML engine for advanced scoring
+- Python ML engine for advanced scoring
 
 ---
 
@@ -162,7 +162,7 @@ Visit: [http://localhost:4200](http://localhost:4200)
 
 ## 👨‍💻 Author
 
-👨‍💻 **Vinod Rajapaksha**
+👨‍💻 **Vinod Rajapaksha**  
 📧 vinodrajapaksha.dev@gmail.com  
 🌐 [LinkedIn](https://www.linkedin.com/in/vinod-rajapaksha) | [GitHub](https://github.com/Vinod-Rajapaksha)
 
