@@ -1,16 +1,16 @@
 package com.jobrecommendation.model;
 
 public class AuthRequest {
-    private String email;
+    private String username;
     private String password;
 
     // Getters and setters
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
